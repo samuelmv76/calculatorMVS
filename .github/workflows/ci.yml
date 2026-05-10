@@ -1,4 +1,4 @@
-name: CI CalculatorAAN
+name: CI CalculatorMVS
 on:
   push:
     branches: [ "main" ]
@@ -23,8 +23,8 @@ jobs:
           check-latest: true
           cache: gradle
 
-    - name: Asegura que gradlew sea ejecutable
-    run: chmod +x ./gradlew
-    
-  - name: Compilación
-  run: ./gradlew compileJava –no-daemon
+      - name: Asegura que gradlew sea ejecutable
+        run: chmod +x ./gradlew
+
+      - name: Compilación
+        run: ./gradlew compileJava --no-daemon
