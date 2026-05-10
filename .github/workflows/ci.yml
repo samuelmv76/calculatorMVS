@@ -24,7 +24,7 @@ jobs:
           cache: gradle
 
       - name: Asegura que gradlew sea ejecutable
-        run: chmod +x ./gradlew
+        run: chmod +x ./calculatorMVS/gradlew
 
       - name: Compilación
-        run: ./gradlew compileJava --no-daemon
+        run: ./calculatorMVS/gradlew compileJava --no-daemon
