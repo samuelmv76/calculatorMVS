@@ -8,17 +8,17 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class CalculatorMvsApplicationTests {
 
-	@Autowired
-	private Calculator calculator;
+    @Autowired
+    private Calculator calculator;
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 /* 
-	@Test
-	public void testSumIncorrecto() {
-		assertEquals(7, calculator.sum(2, 3));
-	}
+    @Test
+    public void testSumIncorrecto() {
+        assertEquals(7, calculator.sum(2, 3));
+    }
 */
 
 }
