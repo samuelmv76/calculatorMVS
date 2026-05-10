@@ -30,3 +30,31 @@ jobs:
       - name: Compilación
         run: ./gradlew compileJava --no-daemon
         working-directory: ./calculatorMVS
+
+      - name: Pruebas unitarias
+        run: ./gradlew test --no-daemon
+        working-directory: ./calculatorMVS
+
+      - name: Generar informe
+        run: ./gradlew jacocoTestReport --no-daemon
+        working-directory: ./calculatorMVS
+
+      - name: Subir artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-report
+          path: calculatorMVS/build/reports/jacoco/test/html
+
+      - name: Verificar cobertura
+        run: ./gradlew jacocoTestCoverageVerification --no-daemon
+        working-directory: ./calculatorMVS
+
+      - name: Ejecutar análisis
+        run: ./gradlew checkstyleMain --no-daemon
+        working-directory: ./calculatorMVS
+
+      - name: Subir informe Checkstyle
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkstyle-report
+          path: calculatorMVS/build/reports/checkstyle
